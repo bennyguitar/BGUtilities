@@ -7,6 +7,7 @@
 //
 
 #import "BGViewController.h"
+#import "BGUtilities.h"
 
 @interface BGViewController ()
 
@@ -18,6 +19,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    view.backgroundColor = [UIColor redColor];
+    view.alpha = 0;
+    [self.view addSubview:view];
+    
+    [view fadeInWithDuration:2 completion:^(BOOL finished) {
+        NSLog(@"Hello");
+    }];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62CBFFE185A11C300936206 /* NSString+BGStringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CBFFD185A11C300936206 /* NSString+BGStringUtilities.m */; };
+		B64BB6ED185A743F002885C2 /* UIView+BGViewUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB6EC185A743F002885C2 /* UIView+BGViewUtilities.m */; };
 		B6FDD3531859150200CB3396 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD3521859150200CB3396 /* Foundation.framework */; };
 		B6FDD3551859150200CB3396 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD3541859150200CB3396 /* CoreGraphics.framework */; };
 		B6FDD3571859150200CB3396 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD3561859150200CB3396 /* UIKit.framework */; };
@@ -22,6 +24,7 @@
 		B6FDD3771859150200CB3396 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD3561859150200CB3396 /* UIKit.framework */; };
 		B6FDD37F1859150200CB3396 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6FDD37D1859150200CB3396 /* InfoPlist.strings */; };
 		B6FDD3811859150200CB3396 /* BGUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FDD3801859150200CB3396 /* BGUtilitiesTests.m */; };
+		B6FDD38F185916AC00CB3396 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD38E185916AC00CB3396 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B62CBFFC185A11C300936206 /* NSString+BGStringUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+BGStringUtilities.h"; path = "Classes/NSString+BGStringUtilities.h"; sourceTree = SOURCE_ROOT; };
+		B62CBFFD185A11C300936206 /* NSString+BGStringUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+BGStringUtilities.m"; path = "Classes/NSString+BGStringUtilities.m"; sourceTree = SOURCE_ROOT; };
+		B64BB6EB185A743F002885C2 /* UIView+BGViewUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BGViewUtilities.h"; path = "Classes/UIView+BGViewUtilities.h"; sourceTree = SOURCE_ROOT; };
+		B64BB6EC185A743F002885C2 /* UIView+BGViewUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BGViewUtilities.m"; path = "Classes/UIView+BGViewUtilities.m"; sourceTree = SOURCE_ROOT; };
+		B64BB6EE185B4F7F002885C2 /* BGUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BGUtilities.h; path = Classes/BGUtilities.h; sourceTree = SOURCE_ROOT; };
 		B6FDD34F1859150200CB3396 /* BGUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FDD3521859150200CB3396 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B6FDD3541859150200CB3396 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +63,7 @@
 		B6FDD37C1859150200CB3396 /* BGUtilitiesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BGUtilitiesTests-Info.plist"; sourceTree = "<group>"; };
 		B6FDD37E1859150200CB3396 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B6FDD3801859150200CB3396 /* BGUtilitiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGUtilitiesTests.m; sourceTree = "<group>"; };
+		B6FDD38E185916AC00CB3396 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6FDD38F185916AC00CB3396 /* QuartzCore.framework in Frameworks */,
 				B6FDD3551859150200CB3396 /* CoreGraphics.framework in Frameworks */,
 				B6FDD3571859150200CB3396 /* UIKit.framework in Frameworks */,
 				B6FDD3531859150200CB3396 /* Foundation.framework in Frameworks */,
@@ -103,6 +113,7 @@
 		B6FDD3511859150200CB3396 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6FDD38E185916AC00CB3396 /* QuartzCore.framework */,
 				B6FDD3521859150200CB3396 /* Foundation.framework */,
 				B6FDD3541859150200CB3396 /* CoreGraphics.framework */,
 				B6FDD3561859150200CB3396 /* UIKit.framework */,
@@ -114,6 +125,7 @@
 		B6FDD3581859150200CB3396 /* BGUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				B6FDD38A1859151000CB3396 /* BGUtilities Classes */,
 				B6FDD3611859150200CB3396 /* BGAppDelegate.h */,
 				B6FDD3621859150200CB3396 /* BGAppDelegate.m */,
 				B6FDD3641859150200CB3396 /* Main_iPhone.storyboard */,
@@ -153,6 +165,18 @@
 				B6FDD37D1859150200CB3396 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6FDD38A1859151000CB3396 /* BGUtilities Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B62CBFFC185A11C300936206 /* NSString+BGStringUtilities.h */,
+				B62CBFFD185A11C300936206 /* NSString+BGStringUtilities.m */,
+				B64BB6EB185A743F002885C2 /* UIView+BGViewUtilities.h */,
+				B64BB6EC185A743F002885C2 /* UIView+BGViewUtilities.m */,
+				B64BB6EE185B4F7F002885C2 /* BGUtilities.h */,
+			);
+			name = "BGUtilities Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62CBFFE185A11C300936206 /* NSString+BGStringUtilities.m in Sources */,
 				B6FDD36C1859150200CB3396 /* BGViewController.m in Sources */,
+				B64BB6ED185A743F002885C2 /* UIView+BGViewUtilities.m in Sources */,
 				B6FDD35F1859150200CB3396 /* main.m in Sources */,
 				B6FDD3631859150200CB3396 /* BGAppDelegate.m in Sources */,
 			);
@@ -475,6 +501,7 @@
 				B6FDD3861859150200CB3396 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6FDD3871859150200CB3396 /* Build configuration list for PBXNativeTarget "BGUtilitiesTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +510,7 @@
 				B6FDD3891859150200CB3396 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
