@@ -10,6 +10,7 @@ All of the important classes are located in the <code>Classes</code> top-level d
 
 * <code>NSString+BGStringUtilities.{h,m}</code>
 * <code>UIView+BGViewUtilities.{h,m}</code>
+* <code>BGSystemUtilities.{h,m}</code>
 * <code>BGUtilities.h</code>
 
 The last class, <code>BGUtilities.h</code> is an aggregate of all of classes above it, meaning you only have to <code>#import "BGUtilities.h"</code> in any classes you'd like to get all of the methods in this suite.
