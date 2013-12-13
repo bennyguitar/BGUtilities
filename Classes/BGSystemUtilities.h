@@ -23,4 +23,12 @@
  */
 + (float)screenHeight;
 
+
+#pragma mark - System Version
+/**
+ Returns the current operating system version.
+ @returns float
+ */
++ (float)iOSVersion;
+
 @end

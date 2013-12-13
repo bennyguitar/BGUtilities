@@ -20,4 +20,10 @@
 }
 
 
+#pragma mark - System Version
++ (float)iOSVersion {
+    return [[[UIDevice currentDevice] systemVersion] floatValue];
+}
+
+
 @end
