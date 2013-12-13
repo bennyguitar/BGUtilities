@@ -13,7 +13,7 @@ All of the important classes are located in the <code>Classes</code> top-level d
 * <code>BGSystemUtilities.{h,m}</code>
 * <code>BGUtilities.h</code>
 
-The last class, <code>BGUtilities.h</code> is an aggregate of all of classes above it, meaning you only have to <code>#import "BGUtilities.h"</code> in any classes you'd like to get all of the methods in this suite.
+The last class, <code>BGUtilities.h</code> is an aggregate of all of the classes above it, meaning you only have to <code>#import "BGUtilities.h"</code> in any classes you'd like to get all of the methods in this suite.
 
 **Cocoapods**
 
@@ -21,4 +21,12 @@ Cocoapods coming soon.
 
 ## License
 
-License coming soon.
+BGUtilities is licensed under the standard MIT License:
+
+**Copyright (C) 2013 by Benjamin Gordon**
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
