@@ -81,4 +81,12 @@
     XCTAssertFalse(contains, @"%s Failed", __PRETTY_FUNCTION__);
 }
 
+- (void)testWordsCount {
+    XCTAssertEqualObjects(@([@"This string contains 5 words." numberOfWords]), @(5), @"%s Failed", __PRETTY_FUNCTION__);
+}
+
+- (void)testUniqueWordsCount {
+    XCTAssertEqualObjects(@([@"This string contains 6 unique words words." uniqueWords].count), @(6), @"%s Failed", __PRETTY_FUNCTION__);
+}
+
 @end

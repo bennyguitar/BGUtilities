@@ -48,4 +48,43 @@
     return [self evaluateWithRegex:@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$"];
 }
 
+
+#pragma mark - Words
+- (NSArray *)words {
+    // Create array
+    __block NSMutableArray *words = [NSMutableArray array];
+    
+    [self enumerateWordsUsingBlock:^(NSString *word, NSInteger index, BOOL *stop) {
+        [words addObject:word];
+    }];
+    
+    // Return words
+    return words;
+}
+
+- (NSSet *)uniqueWords {
+    return [NSSet setWithArray:[self words]];
+}
+
+- (NSInteger)numberOfWords {
+    return [[self words] count];
+}
+
+- (void)enumerateWordsUsingBlock:(void (^)(NSString *word, NSInteger index, BOOL *stop))block {
+    // Create Linguistic Tagger
+    NSLinguisticTaggerOptions options = NSLinguisticTaggerOmitWhitespace | NSLinguisticTaggerOmitPunctuation;
+    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes: [NSLinguisticTagger availableTagSchemesForLanguage:@"en"] options:options];
+    tagger.string = self;
+    
+    // Set Up Enumeration
+    __block NSInteger index = 0;
+    
+    // Enumerate the tags and add to words
+    [tagger enumerateTagsInRange:NSMakeRange(0, [self length]) scheme:NSLinguisticTagSchemeNameTypeOrLexicalClass options:options usingBlock:^(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop) {
+        block([self substringWithRange:tokenRange], index, stop);
+        index++;
+    }];
+}
+
+
 @end

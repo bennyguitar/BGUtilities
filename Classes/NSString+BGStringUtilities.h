@@ -44,4 +44,29 @@
 - (BOOL)isValidEmail;
 
 
+#pragma mark - Words
+/**
+ Returns an NSArray of words from the string.
+ @returns NSArray
+ */
+- (NSArray *)words;
+
+/**
+ Returns an NSSet of the number of unique words in the string. Does not take into account plural vs. singular in determining if a word is there or not. Cats and cat are unique words.
+ @returns NSSet
+ */
+- (NSSet *)uniqueWords;
+
+/**
+ Returns an NSInteger representing how many words the string contains. This method counts all words, and not unique ones.
+ @returns NSArray
+ */
+- (NSInteger)numberOfWords;
+
+/**
+ Uses a block to enumerate through all of the words in the string. Set stop to YES whenever you want to finish enumerating.
+ */
+- (void)enumerateWordsUsingBlock:(void (^)(NSString *word, NSInteger index, BOOL *stop))block;
+
+
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B62CBFFE185A11C300936206 /* NSString+BGStringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CBFFD185A11C300936206 /* NSString+BGStringUtilities.m */; };
 		B64BB6ED185A743F002885C2 /* UIView+BGViewUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB6EC185A743F002885C2 /* UIView+BGViewUtilities.m */; };
+		B64BB6F1185B678C002885C2 /* BGSystemUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB6F0185B678C002885C2 /* BGSystemUtilities.m */; };
 		B6FDD3531859150200CB3396 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD3521859150200CB3396 /* Foundation.framework */; };
 		B6FDD3551859150200CB3396 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD3541859150200CB3396 /* CoreGraphics.framework */; };
 		B6FDD3571859150200CB3396 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD3561859150200CB3396 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		B64BB6EB185A743F002885C2 /* UIView+BGViewUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BGViewUtilities.h"; path = "Classes/UIView+BGViewUtilities.h"; sourceTree = SOURCE_ROOT; };
 		B64BB6EC185A743F002885C2 /* UIView+BGViewUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BGViewUtilities.m"; path = "Classes/UIView+BGViewUtilities.m"; sourceTree = SOURCE_ROOT; };
 		B64BB6EE185B4F7F002885C2 /* BGUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BGUtilities.h; path = Classes/BGUtilities.h; sourceTree = SOURCE_ROOT; };
+		B64BB6EF185B678C002885C2 /* BGSystemUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGSystemUtilities.h; path = Classes/BGSystemUtilities.h; sourceTree = SOURCE_ROOT; };
+		B64BB6F0185B678C002885C2 /* BGSystemUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSystemUtilities.m; path = Classes/BGSystemUtilities.m; sourceTree = SOURCE_ROOT; };
 		B6FDD34F1859150200CB3396 /* BGUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FDD3521859150200CB3396 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B6FDD3541859150200CB3396 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 				B62CBFFD185A11C300936206 /* NSString+BGStringUtilities.m */,
 				B64BB6EB185A743F002885C2 /* UIView+BGViewUtilities.h */,
 				B64BB6EC185A743F002885C2 /* UIView+BGViewUtilities.m */,
+				B64BB6EF185B678C002885C2 /* BGSystemUtilities.h */,
+				B64BB6F0185B678C002885C2 /* BGSystemUtilities.m */,
 				B64BB6EE185B4F7F002885C2 /* BGUtilities.h */,
 			);
 			name = "BGUtilities Classes";
@@ -280,6 +285,7 @@
 			files = (
 				B62CBFFE185A11C300936206 /* NSString+BGStringUtilities.m in Sources */,
 				B6FDD36C1859150200CB3396 /* BGViewController.m in Sources */,
+				B64BB6F1185B678C002885C2 /* BGSystemUtilities.m in Sources */,
 				B64BB6ED185A743F002885C2 /* UIView+BGViewUtilities.m in Sources */,
 				B6FDD35F1859150200CB3396 /* main.m in Sources */,
 				B6FDD3631859150200CB3396 /* BGAppDelegate.m in Sources */,
