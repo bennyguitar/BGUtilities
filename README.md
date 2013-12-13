@@ -19,6 +19,71 @@ The last class, <code>BGUtilities.h</code> is an aggregate of all of the classes
 
 Cocoapods coming soon.
 
+## Table of Contents
+
+* [NSString](#nsstring)
+* [UIView](#uiview)
+* [System Methods](#system-methods)
+* [License](#license)
+
+## NSString
+
+There's a lot of cool things you can do with NSString, but the only problem is that sometimes you have to dig down and use some other NSObject classes to do them. Here is a growing list of methods that I think should help any iOS developer handle NSString manipulations.
+
+**Contains Searches**
+
+The two methods <code>contains:</code> and <code>containsAnyInArray:</code> are the methods used to check for existence of substring(s) inside of an NSString. These comparisons are case-insensitive, so capital letters register the same as lowercase. Here's how you use them:
+
+```objc
+NSString *mainString = @"Contains";
+
+BOOL containsSubString = [mainString contains:@"Con"];
+BOOL containsAnySubString = [mainString containsAnyInArray:@[@"BG",@"Con"]];
+```
+
+**Regular Expressions**
+
+Regular Expressions can be very powerful tools despite the insanely disgusting syntax. With that said, here is the main method for evaluating a string using regex:
+
+```objc
+BOOL evaluate = [@"HelloWorld" evaluateWithRegex:@"{2,10}"];
+```
+
+Beyond just stock regular expression evaluation, there is also a convenience method for determing if an email address is valid too.
+
+```objc
+BOOL isValid = [@"benjamin.gordon@intermarkgroup.com" isValidEmail];
+```
+
+**Words**
+
+Sometimes you want to evaluate text as if it conceptually contains words, and then act on them. There are a few convenience methods here as well for determining the number of words any NSString contains.
+
+```objc
+NSString *sentence = @"This sentence contains 6 unique words words.";
+NSArray *words = [sentence words];
+NSSet *uniqueWords = [sentence uniqueWords];
+NSInteger *wordCount = [sentence numberOfWords];
+```
+
+Beyond these shorthand methods, there is also a main method used to enumerate all of the words inside of a sentence:
+
+```objc
+NSString *sentence = @"This sentence contains 6 unique words words.";
+[sentence enumerateWordsUsingBlock:^(NSString *word, NSInteger index, BOOL *stop){
+  // Do something with word here.
+  // Set stop = YES to break the enumeration loop.
+}];
+```
+
+## UIView
+
+Coming soon.
+
+## System Methods
+
+Coming soon.
+
 ## License
 
 BGUtilities is licensed under the standard MIT License:
