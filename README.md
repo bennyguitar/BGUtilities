@@ -21,9 +21,11 @@ Cocoapods coming soon.
 
 ## Table of Contents
 
-* [NSString](#nsstring)
-* [UIView](#uiview)
-* [System Methods](#system-methods)
+* **Suite of Utilities**
+  * [NSString](#nsstring)
+  * [UIView](#uiview)
+  * [System Methods](#system-methods)
+* [Unit Tests](#unit-tests)
 * [License](#license)
 
 ## NSString
@@ -83,6 +85,10 @@ Coming soon.
 ## System Methods
 
 Coming soon.
+
+## Unit Tests
+
+Included in the main project is a suite of unit tests designed to quickly check and verify that these methods are actually doing what they say they're doing. I also have these tests running on a [Travis CI](https://travis-ci.org/bennyguitar/BGUtilities) integration server, where pull requests and other modifications can be tested and validated before ever merging into the main repository.
 
 ## License
 
