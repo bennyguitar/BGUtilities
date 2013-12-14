@@ -81,13 +81,18 @@
 }
 
 - (NSInteger)numberOfWords {
-    return [[self words] count];
+    __block int count = 0;
+    [self enumerateWordsUsingBlock:^(NSString *word, NSInteger index, BOOL *stop) {
+        count++;
+    }];
+    
+    return count;
 }
 
 - (void)enumerateWordsUsingBlock:(void (^)(NSString *word, NSInteger index, BOOL *stop))block {
     // Create Linguistic Tagger
     NSLinguisticTaggerOptions options = NSLinguisticTaggerOmitWhitespace | NSLinguisticTaggerOmitPunctuation;
-    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes: [NSLinguisticTagger availableTagSchemesForLanguage:@"en"] options:options];
+    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:[NSLinguisticTagger availableTagSchemesForLanguage:@"en"] options:options];
     tagger.string = self;
     
     // Set Up Enumeration

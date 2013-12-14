@@ -89,4 +89,16 @@
     XCTAssertEqualObjects(@([@"This string contains 6 unique words words." uniqueWords].count), @(6), @"%s Failed", __PRETTY_FUNCTION__);
 }
 
+- (void)testStopBreaksEnumeration {
+    __block int count = 0;
+    [@"This string contains 6 unique words." enumerateWordsUsingBlock:^(NSString *word, NSInteger index, BOOL *stop) {
+        count++;
+        if (count == 3) {
+            *stop = YES;
+        }
+    }];
+    
+    XCTAssertEqual(count, 3, @"%s Failed.", __PRETTY_FUNCTION__);
+}
+
 @end

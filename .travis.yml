@@ -1,0 +1,7 @@
+language: objective-c
+
+before_script: 
+- echo -e "BGUtilities Test Suite"
+
+script:
+- xcodebuild -project BGUtilities.xcodeproj -scheme BGUtilities -sdk iphonesimulator test | xcpretty -c
