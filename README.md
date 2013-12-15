@@ -130,7 +130,7 @@ float width = [BGSystemUtilities screenWidth];
 float height = [BGSystemUtilities screenHeight];
 ```
 
-You can also get the current iOS version number very easily as well.
+**Current iOS Version**
 
 ```objc
 float versionNumber = [BGSystemUtilities iOSVersion];
