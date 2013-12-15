@@ -4,6 +4,8 @@
 
 After growing tired of always writing a lot of (what felt like) boilerplate Objective-C over and over again, I decided to make a bunch of useful utilities to make my life easier, and by proxy, yours too. This is an ever-growing repository of useful functions that should help you in development. I encourage you to read through their implementation so that you understand what's happening in the background and don't get comfortable with an extremely abstracted up representation of those functions.
 
+[![Build Status](https://travis-ci.org/bennyguitar/BGUtilities.png?branch=master)](https://travis-ci.org/bennyguitar/BGUtilities)
+
 ## Installation
 
 All of the important classes are located in the <code>Classes</code> top-level directory in this repository. These are the ones you'll need:
@@ -104,8 +106,6 @@ That method call handles just about all of the customization you need to add a s
 Borders are just as easy to add as shadows. Using this method creates a border that is inset in the view, meaning that if your view is 300px wide by 150px tall, after you add your border your view is still 300x150.
 
 ```objc
-UIView *someView;
-
 [someView addBorderWithWidth:1.0 color:[UIColor blueColor]];
 ```
 
