@@ -80,7 +80,42 @@ NSString *sentence = @"This sentence contains 6 unique words words.";
 
 ## UIView
 
-Coming soon.
+Convenience is key when it comes to these methods for UIView. The first ones we start off with are for UI considerations.
+
+**Shadows**
+
+Everyone loves shadows. Every developer hates coding them. Through <code>QuartzCore</code> it's not too terrible to make shadows, but what should be a very quick method call ends up taking about 5 or 6 lines to make a shadow correctly. This is why it's important to not keep rewriting this UI boilerplate code. Let me do that for you:
+
+```objc
+UIView *someView;
+
+// Customize a shadow
+[someView addShadowWithOffsetSize:CGSizeMake(1.0,1.0) color:[UIColor blackColor] opacity:0.5 radius:0.0];
+```
+
+That method call handles just about all of the customization you need to add a shadow to a view. However, if what you want is even faster and has less tinkering involved, I made a quick shorthand method for this as well. It uses the exact same parameters as the above code snippet. Obviously, you can change this depending on whatever you think a default shadow should look like:
+
+```objc
+[someView addShadow];
+```
+
+**Borders**
+
+Borders are just as easy to add as shadows. Using this method creates a border that is inset in the view, meaning that if your view is 300px wide by 150px tall, after you add your border your view is still 300x150.
+
+```objc
+UIView *someView;
+
+[someView addBorderWithWidth:1.0 color:[UIColor blueColor]];
+```
+
+**Corner Raidus**
+
+This method doesn't add much, since setting the corner radius on a view is only one line of code anyways. However, it's not the most intuitive to go through the layer at first, so using this method should make a little more sense and probably take away time from having to think about what to go through for just adding rounded corners.
+
+```objc
+[someView setCornerRadius:7];
+```
 
 ## System Methods
 
