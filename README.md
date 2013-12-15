@@ -117,6 +117,62 @@ This method doesn't add much, since setting the corner radius on a view is only 
 [someView setCornerRadius:7];
 ```
 
+**Animations**
+
+As iOS progresses, high-quality animations are getting easier and easier to accomplish. However, I felt like there were some stock animations that could be made easier to directly do without doing the usual 4-5 lines necessary to make something happen. The first of these animations is fading in and fading out. Here's some ways to do this:
+
+```objc
+UIView *someView;
+
+// Fade In With Duration and a Completion Block
+[someView fadeInWithDuration:0.25 completion:^(BOOL finished){
+  // Do something upon completion!
+}];
+
+// Fade In With Duration
+[someView fadeInWithDuration:0.25];
+
+// Stock Fade In - 0.25 seconds and no completion block
+[someView fadeIn];
+
+// Fade Out With Duration and a Completion Block
+[someView fadeOutWithDuration:0.25 completion:^(BOOL finished){
+  // Do something upon completion!
+}];
+
+// Fade Out With Duration
+[someView fadeOutWithDuration:0.25];
+
+// Stock Fade Out - 0.25 seconds and no completion block
+[someView fadeOut];
+```
+
+These are all dandy, but what if you want to fade in/out an entire collection of UIViews? Well, use this master method to accomplish that:
+
+```objc
+[UIView fadeViews:@[someView,someOtherView] withDuration:0.25 fadeIn:YES completion:^(BOOL finished){
+  // Do something upon completion!
+}];
+```
+
+**CGRect Methods**
+
+Typing out <code>someView.frame.size.height</code> can get very annoying, very fast. So here's a few shorthand methods that make life easier when doing a lot of frame transformations and lookups.
+
+```objc
+float height = [someView height];
+float width = [someView width];
+CGPoint origin = [someView origin];
+```
+
+**Separator Bar**
+
+This one might be the most useless or actually a very useful method for you. I've spent too many times adding a 1px tall view that acts as a visual separator. So, here's a useful function I made to add one wherever you want:
+
+```objc
+UIView *separator = [UIView separatorWithWidth:300 origin:CGPointMake(10,10) color:[UIColor darkGrayColor]];
+```
+
 ## System Methods
 
 Some helper methods I've created and curated don't really belong in categories, but are more appropriate for class methods that relate to the system in general - less to classes like UIView or NSString.
