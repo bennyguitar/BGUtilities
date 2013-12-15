@@ -20,12 +20,29 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#ifndef BGUtilities_BGUtilities_h
-#define BGUtilities_BGUtilities_h
+#import <Foundation/Foundation.h>
 
-#import "NSString+BGStringUtilities.h"
-#import "NSScanner+BGScannerUtilities.h"
-#import "UIView+BGViewUtilities.h"
-#import "BGSystemUtilities.h"
+@interface NSScanner (BGScannerUtilities)
 
-#endif
+#pragma mark - Scan Betwen Strings into a String
+/**
+ This function scans everything between two NSStrings into another NSString that is passed by reference into the method.
+ @param stringA - NSString to start scanning after
+ @param stringB - NSString to scan until
+ @param passByRefString - NSString that assumes the value of the scan
+ */
+- (void)scanBetweenString:(NSString *)stringA andString:(NSString *)stringB intoString:(NSString **)passByRefString;
+
+
+#pragma mark - Enumerate the substrings between two strings
+/**
+ This function enumerates the substrings delimted by the separator between two strings.
+ @param stringA - NSString to start scanning after
+ @param stringB - NSString to scan until
+ @param separator   - NSString to delimit the substrings
+ @param enumerationBlock    - Block to enumerate substrings
+ */
+- (void)enumerateSubstringsBetweenString:(NSString *)stringA andString:(NSString *)stringB separator:(NSString *)separator block:(void (^)(NSString *subString, NSInteger index, BOOL *stop))enumerationBlock;
+
+
+@end

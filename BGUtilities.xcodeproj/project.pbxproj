@@ -26,6 +26,7 @@
 		B6FDD37F1859150200CB3396 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6FDD37D1859150200CB3396 /* InfoPlist.strings */; };
 		B6FDD3811859150200CB3396 /* BGUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FDD3801859150200CB3396 /* BGUtilitiesTests.m */; };
 		B6FDD38F185916AC00CB3396 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FDD38E185916AC00CB3396 /* QuartzCore.framework */; };
+		C072EA2B185E17EC009A0DF9 /* NSScanner+BGScannerUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C072EA2A185E17EC009A0DF9 /* NSScanner+BGScannerUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		B6FDD37E1859150200CB3396 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B6FDD3801859150200CB3396 /* BGUtilitiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGUtilitiesTests.m; sourceTree = "<group>"; };
 		B6FDD38E185916AC00CB3396 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C072EA29185E17EC009A0DF9 /* NSScanner+BGScannerUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSScanner+BGScannerUtilities.h"; path = "Classes/NSScanner+BGScannerUtilities.h"; sourceTree = SOURCE_ROOT; };
+		C072EA2A185E17EC009A0DF9 /* NSScanner+BGScannerUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSScanner+BGScannerUtilities.m"; path = "Classes/NSScanner+BGScannerUtilities.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 			children = (
 				B62CBFFC185A11C300936206 /* NSString+BGStringUtilities.h */,
 				B62CBFFD185A11C300936206 /* NSString+BGStringUtilities.m */,
+				C072EA29185E17EC009A0DF9 /* NSScanner+BGScannerUtilities.h */,
+				C072EA2A185E17EC009A0DF9 /* NSScanner+BGScannerUtilities.m */,
 				B64BB6EB185A743F002885C2 /* UIView+BGViewUtilities.h */,
 				B64BB6EC185A743F002885C2 /* UIView+BGViewUtilities.m */,
 				B64BB6EF185B678C002885C2 /* BGSystemUtilities.h */,
@@ -286,6 +291,7 @@
 				B62CBFFE185A11C300936206 /* NSString+BGStringUtilities.m in Sources */,
 				B6FDD36C1859150200CB3396 /* BGViewController.m in Sources */,
 				B64BB6F1185B678C002885C2 /* BGSystemUtilities.m in Sources */,
+				C072EA2B185E17EC009A0DF9 /* NSScanner+BGScannerUtilities.m in Sources */,
 				B64BB6ED185A743F002885C2 /* UIView+BGViewUtilities.m in Sources */,
 				B6FDD35F1859150200CB3396 /* main.m in Sources */,
 				B6FDD3631859150200CB3396 /* BGAppDelegate.m in Sources */,

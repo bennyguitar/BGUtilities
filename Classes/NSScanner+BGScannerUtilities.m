@@ -20,12 +20,33 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#ifndef BGUtilities_BGUtilities_h
-#define BGUtilities_BGUtilities_h
-
-#import "NSString+BGStringUtilities.h"
 #import "NSScanner+BGScannerUtilities.h"
-#import "UIView+BGViewUtilities.h"
-#import "BGSystemUtilities.h"
 
-#endif
+@implementation NSScanner (BGScannerUtilities)
+
+#pragma mark - Scan Between Strings into a String
+- (void)scanBetweenString:(NSString *)stringA andString:(NSString *)stringB intoString:(NSString **)passByRefString {
+    NSString *trash = @"";
+    [self scanUpToString:stringA intoString:&trash];
+    [self scanString:stringA intoString:&trash];
+    [self scanUpToString:stringB intoString:passByRefString];
+}
+
+#pragma mark - Enumerate the substrings between two strings
+- (void)enumerateSubstringsBetweenString:(NSString *)stringA andString:(NSString *)stringB separator:(NSString *)separator block:(void (^)(NSString *subString, NSInteger index, BOOL *stop))enumerationBlock {
+    NSString *enumerationString = @"";
+    [self scanBetweenString:stringA andString:stringB intoString:&enumerationString];
+    
+    // Enumerate in Block
+    NSInteger index = 0;
+    BOOL stop = NO;
+    for (NSString *subString in [enumerationString componentsSeparatedByString:separator]) {
+        enumerationBlock(subString,index,&stop);
+        index++;
+        if (stop == YES) {
+            break;
+        }
+    }
+}
+
+@end

@@ -7,8 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "UIView+BGViewUtilities.h"
-#import "NSString+BGStringUtilities.h"
+#import "BGUtilities.h"
 
 @interface BGUtilitiesTests : XCTestCase
 
@@ -99,6 +98,34 @@
     }];
     
     XCTAssertEqual(count, 3, @"%s Failed.", __PRETTY_FUNCTION__);
+}
+
+
+#pragma mark - NSScanner Methods
+- (void)testScannerBetweenStrings {
+    NSString *testString = @"red green blue yellow purple orange black white";
+    NSString *scannedString = @"";
+    NSScanner *newScanner = [NSScanner scannerWithString:testString];
+    [newScanner scanBetweenString:@"red " andString:@" black" intoString:&scannedString];
+    XCTAssertEqualObjects(@"green blue yellow purple orange", scannedString, @"%s Failed.", __PRETTY_FUNCTION__);
+}
+
+- (void)testScannerEnumeratesBetweenStrings {
+    // Set Up
+    NSString *testString = @"red green blue yellow purple orange black white";
+    __block NSString *thirdString = @"";
+    NSScanner *newScanner = [NSScanner scannerWithString:testString];
+    
+    // Enumerate
+    [newScanner enumerateSubstringsBetweenString:@"red " andString:@" black" separator:@" " block:^(NSString *subString, NSInteger index, BOOL *stop) {
+        if (index == 2) {
+            thirdString = subString;
+            *stop = YES;
+        }
+    }];
+    
+    // Test
+    XCTAssertEqualObjects(@"yellow", thirdString, @"%s Failed.", __PRETTY_FUNCTION__);
 }
 
 @end
