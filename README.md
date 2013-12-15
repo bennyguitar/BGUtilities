@@ -11,6 +11,7 @@ After growing tired of always writing a lot of (what felt like) boilerplate Obje
 All of the important classes are located in the <code>Classes</code> top-level directory in this repository. These are the ones you'll need:
 
 * <code>NSString+BGStringUtilities.{h,m}</code>
+* <code>NSScanner+BGScannerUtilities.{h,m}</code>
 * <code>UIView+BGViewUtilities.{h,m}</code>
 * <code>BGSystemUtilities.{h,m}</code>
 * <code>BGUtilities.h</code>
@@ -25,6 +26,7 @@ Cocoapods coming soon.
 
 * **Suite of Utilities**
   * [NSString](#nsstring)
+  * [NSScanner](#nsscanner)
   * [UIView](#uiview)
   * [System Methods](#system-methods)
 * [Unit Tests](#unit-tests)
@@ -77,6 +79,40 @@ NSString *sentence = @"This sentence contains 6 unique words words.";
 [sentence enumerateWordsUsingBlock:^(NSString *word, NSInteger index, BOOL *stop){
   // Do something with word here.
   // Set stop = YES to break the enumeration loop.
+}];
+```
+
+## NSScanner
+
+**Scan a string that is between two other strings**
+
+NSScanner is notoriously cumbersome to use for this simple use case. Say you have a string that looks like this: <code>@"Hi my name is (Ben)!"</code> and you just want to get the characters between the two parentheses. Here's how you'd grab that info:
+
+```objc
+NSScanner *scanner = [[NSScanner alloc] initWithString:@"Hi my name is (Ben)!"];
+NSString *name = @"";
+[scanner scanBetweenString:@"(" andString:@")" intoString:&name];
+```
+
+**Enumerate substrings between two strings**
+
+Now, say you have a weird string that's formatted like so: <code>@"Somebody named (Jane) has {apples, bananas, oranges, pears, peaches} in her basket."</code> and you have a Person object where you'd like to assign a name and their various fruits to them. Here's how you'd go about this, assuming a Person object with a Name (string) property and a Fruits (NSMutableArray) property:
+
+```objc
+// Make a person
+Person *newPerson = [[Person alloc] init];
+
+// Set up scanner
+NSScanner *scanner = [[NSScanner alloc] initWithString:@"Somebody named (Jane) has {apples, bananas, oranges, pears, peaches} in her basket."];
+NSString *name = @"";
+
+// Scan name
+[scanner scanBetweenString:@"(" andString:@")" intoString:&name];
+newPerson.Name = name;
+
+// Scan fruits
+[scanner enumerateSubstringsBetweenString:@"{" andString:@"}" separator:@", " block:^(NSString *subString, NSInteger *index, BOOL *stop) {
+    [newPerson.Fruits addObject:subString];
 }];
 ```
 
