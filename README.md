@@ -119,7 +119,22 @@ This method doesn't add much, since setting the corner radius on a view is only 
 
 ## System Methods
 
-Coming soon.
+Some helper methods I've created and curated don't really belong in categories, but are more appropriate for class methods that relate to the system in general - less to classes like UIView or NSString.
+
+**Screen Width & Height**
+
+You can grab the screen width and height for the current orientation of the device like so:
+
+```objc
+float width = [BGSystemUtilities screenWidth];
+float height = [BGSystemUtilities screenHeight];
+```
+
+You can also get the current iOS version number very easily as well.
+
+```objc
+float versionNumber = [BGSystemUtilities iOSVersion];
+```
 
 ## Unit Tests
 
