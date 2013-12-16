@@ -49,10 +49,10 @@ BOOL containsAnySubString = [mainString containsAnyInArray:@[@"BG",@"Con"]];
 
 **Regular Expressions**
 
-Regular Expressions can be very powerful tools despite the insanely disgusting syntax. With that said, here is the main method for evaluating a string using regex:
+Regular Expressions can be very powerful tools despite the insanely disgusting syntax. With that said, here is the main method for evaluating whether a string matches a regular expression:
 
 ```objc
-BOOL evaluate = [@"HelloWorld" evaluateWithRegex:@"{2,10}"];
+BOOL matches = [@"HelloWorld" matchesRegex:@"{2,10}"];
 ```
 
 Beyond just stock regular expression evaluation, there is also a convenience method for determing if an email address is valid too.
