@@ -55,6 +55,15 @@ Regular Expressions can be very powerful tools despite the insanely disgusting s
 BOOL matches = [@"HelloWorld" matchesRegex:@"{2,10}"];
 ```
 
+You can also enumerate your matches inside of a string as well:
+
+```objc
+[@"1 2 3 4 5" enumerateRegexMatches:@"\\d+" usingBlock:^(NSString *match, NSInteger index, NSRange matchRange, BOOL *stop) {
+  // Use the match or range how you need to
+  // Set stop = YES to end the enumeration loop
+}];
+```
+
 Beyond just stock regular expression evaluation, there is also a convenience method for determing if an email address is valid too.
 
 ```objc
