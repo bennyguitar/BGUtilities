@@ -62,6 +62,24 @@
     XCTAssertFalse([email isValidEmail], @"%s Failed", __PRETTY_FUNCTION__);
 }
 
+- (void)testRegexEnumeration {
+    __block int result = 0;
+    [@"1 2 3 4 5" enumerateRegexMatches:@"\\d+" usingBlock:^(NSString *match, NSInteger index, NSRange matchRange, BOOL *stop) {
+        result += [match intValue];
+    }];
+    
+    XCTAssertEqual(result, 15, @"%s Failed.", __PRETTY_FUNCTION__);
+}
+
+- (void)testInvalidRegexEnumeration {
+    __block int result = 0;
+    [@"1 2 3 4 5" enumerateRegexMatches:@"\\" usingBlock:^(NSString *match, NSInteger index, NSRange matchRange, BOOL *stop) {
+        result += [match intValue];
+    }];
+    
+    XCTAssertEqual(result, 0, @"%s Failed.", __PRETTY_FUNCTION__);
+}
+
 - (void)testStringContainsIsValid {
     XCTAssert([@"Contains" contains:@"on"], @"%s Failed", __PRETTY_FUNCTION__);
 }

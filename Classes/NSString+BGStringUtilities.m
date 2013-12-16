@@ -56,6 +56,18 @@
     return match ? YES : NO;
 }
 
+- (void)enumerateRegexMatches:(NSString *)regexString usingBlock:(void (^)(NSString *match, NSInteger index, NSRange matchRange, BOOL *stop))block {
+    // Find matches with regular expression
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionCaseInsensitive error:nil];
+    NSArray *matches = [regex matchesInString:self options:0 range:NSMakeRange(0, self.length)];
+    
+    // Enumerate them
+    [matches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSTextCheckingResult *result = (NSTextCheckingResult *)obj;
+        block([self substringWithRange:result.range], idx, result.range, stop);
+    }];
+}
+
 
 #pragma mark - Email Validation
 - (BOOL)isValidEmail {

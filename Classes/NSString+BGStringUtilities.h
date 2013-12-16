@@ -49,6 +49,12 @@
  */
 - (BOOL)matchesRegex:(NSString *)regexString;
 
+/**
+ Takes in a regular expression string and enumerates all of the matches found. Set stop = YES to end the enumeration loop.
+ @param regexString - NSString of the regular expression
+ */
+- (void)enumerateRegexMatches:(NSString *)regexString usingBlock:(void (^)(NSString *match, NSInteger index, NSRange matchRange, BOOL *stop))block;
+
 
 #pragma mark - Email Validation
 /**
