@@ -75,6 +75,14 @@
     return self.frame.size.height;
 }
 
+- (float)xOrigin {
+    return self.frame.origin.x;
+}
+
+- (float)yOrigin {
+    return self.frame.origin.y;
+}
+
 
 #pragma mark - Fading Animations
 // Main Fade Method

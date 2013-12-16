@@ -87,6 +87,18 @@
  */
 - (float)height;
 
+/**
+ This is a shorthand method to get the X Origin of the frame.
+ @returns float
+ */
+- (float)xOrigin;
+
+/**
+ This is a shorthand method to get the Y Origin of the frame.
+ @returns float
+ */
+- (float)yOrigin;
+
 
 #pragma mark - Animations
 /**
