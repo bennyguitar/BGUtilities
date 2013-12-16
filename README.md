@@ -208,6 +208,8 @@ Typing out <code>someView.frame.size.height</code> can get very annoying, very f
 float height = [someView height];
 float width = [someView width];
 CGPoint origin = [someView origin];
+float x = [someView xOrigin];
+float y = [someView yOrigin];
 ```
 
 **Separator Bar**
