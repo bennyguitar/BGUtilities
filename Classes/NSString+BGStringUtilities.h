@@ -47,7 +47,7 @@
  @param regexString - NSString of the regular expression
  @returns BOOL
  */
-- (BOOL)evaluateWithRegex:(NSString *)regexString;
+- (BOOL)matchesRegex:(NSString *)regexString;
 
 
 #pragma mark - Email Validation

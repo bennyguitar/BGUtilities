@@ -50,7 +50,7 @@
 
 
 #pragma mark - REGEX
-- (BOOL)evaluateWithRegex:(NSString *)regexString {
+- (BOOL)matchesRegex:(NSString *)regexString {
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionCaseInsensitive error:nil];
     NSTextCheckingResult *match = [regex firstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
     return match ? YES : NO;
@@ -59,7 +59,7 @@
 
 #pragma mark - Email Validation
 - (BOOL)isValidEmail {
-    return [self evaluateWithRegex:@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$"];
+    return [self matchesRegex:@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$"];
 }
 
 
