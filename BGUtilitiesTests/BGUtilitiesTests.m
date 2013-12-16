@@ -72,12 +72,11 @@
 }
 
 - (void)testInvalidRegexEnumeration {
-    __block int result = 0;
     [@"1 2 3 4 5" enumerateRegexMatches:@"\\" usingBlock:^(NSString *match, NSInteger index, NSRange matchRange, BOOL *stop) {
-        result += [match intValue];
+        XCTAssert(NO, @"%s Failed.", __PRETTY_FUNCTION__);
     }];
     
-    XCTAssertEqual(result, 0, @"%s Failed.", __PRETTY_FUNCTION__);
+    XCTAssert(YES, @"%s Failed.", __PRETTY_FUNCTION__);
 }
 
 - (void)testStringContainsIsValid {

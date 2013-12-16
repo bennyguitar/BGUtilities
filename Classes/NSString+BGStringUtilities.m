@@ -62,10 +62,12 @@
     NSArray *matches = [regex matchesInString:self options:0 range:NSMakeRange(0, self.length)];
     
     // Enumerate them
-    [matches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSTextCheckingResult *result = (NSTextCheckingResult *)obj;
-        block([self substringWithRange:result.range], idx, result.range, stop);
-    }];
+    if (matches.count > 0) {
+        [matches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSTextCheckingResult *result = (NSTextCheckingResult *)obj;
+            block([self substringWithRange:result.range], idx, result.range, stop);
+        }];
+    }
 }
 
 
