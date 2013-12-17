@@ -79,9 +79,7 @@
 
 #pragma mark - Words
 - (NSArray *)words {
-    // Create array
     __block NSMutableArray *words = [NSMutableArray array];
-    
     [self enumerateWordsUsingBlock:^(NSString *word, NSInteger index, BOOL *stop) {
         [words addObject:word];
     }];

@@ -37,7 +37,7 @@
 
 #pragma mark - Shadows
 /**
- Creates a generic shadow on the view. This calls the following method: [self addShadowWithOffsetSize:CGSizeMake(1.0f, 1.0f) color:[UIColor blackColor] opacity:0.4 radius:0.0].
+ Creates a generic shadow on the view. This calls the following method: [self addShadowWithOffsetSize:CGSizeMake(1.0, 1.0) color:[UIColor blackColor] opacity:0.5 radius:0.0].
  */
 - (void)addShadow;
 

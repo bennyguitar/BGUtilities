@@ -27,7 +27,7 @@
 #pragma mark - Separator UIView
 + (UIView *)separatorWithWidth:(float)width origin:(CGPoint)origin color:(UIColor *)color {
     UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(origin.x, origin.y, width, 1)];
-    [separator setBackgroundColor:color];
+    [separator setBackgroundColor:(color ? color : [UIColor blackColor])];
     [separator setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleWidth];
     return separator;
 }
@@ -35,13 +35,13 @@
 
 #pragma mark - Shadows
 - (void)addShadow {
-    [self addShadowWithOffsetSize:CGSizeMake(1.0f, 1.0f) color:[UIColor blackColor] opacity:0.4 radius:0.0];
+    [self addShadowWithOffsetSize:CGSizeMake(1.0, 1.0) color:[UIColor blackColor] opacity:0.5 radius:0.0];
 }
 
 - (void)addShadowWithOffsetSize:(CGSize)offset color:(UIColor *)color opacity:(float)opacity radius:(float)radius {
     self.layer.shadowColor = color ? color.CGColor : [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = opacity ? opacity : 0.5;
-    self.layer.shadowOffset = offset.height ? offset : CGSizeMake(1, 1);
+    self.layer.shadowOffset = offset.height ? offset : CGSizeMake(1.0, 1.0);
     self.layer.shadowRadius = radius ? radius : 0;
     self.layer.masksToBounds = NO;
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:radius];
@@ -58,7 +58,7 @@
 
 #pragma mark - Corner Radius
 - (void)setCornerRadius:(float)radius {
-    self.layer.cornerRadius = radius;
+    self.layer.cornerRadius = radius ? radius : 0.0;
 }
 
 
@@ -87,12 +87,19 @@
 #pragma mark - Fading Animations
 // Main Fade Method
 + (void)fadeViews:(NSArray *)views withDuration:(float)duration fadeIn:(BOOL)fadeIn completion:(void (^)(BOOL finished))completion {
+    // If no views, stop the exception
+    if (!views) {
+        return;
+    }
+    
     [UIView animateWithDuration:(duration ? duration : 0.25) animations:^{
         [views enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [(UIView *)obj setAlpha:(fadeIn ? 1.0 : 0.0)];
         }];
     } completion:^(BOOL finished){
-        completion(YES);
+        if (completion) {
+            completion(YES);
+        }
     }];
 }
 
