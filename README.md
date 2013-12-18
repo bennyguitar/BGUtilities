@@ -20,7 +20,7 @@ The last class, <code>BGUtilities.h</code> is an aggregate of all of the classes
 
 **Cocoapods**
 
-Cocoapods coming soon.
+<code>pod 'BGUtilities'</code>
 
 ## Table of Contents
 
