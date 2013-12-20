@@ -26,13 +26,13 @@
 
 #pragma mark - Screen Width/Height
 /**
- Returns the screen width for the current orientation.
+ Returns the screen width for the current orientation. This method uses the [[UIApplication sharedApplication] statusBarOrientation] method to determine screen width. If you manually override that property, it will cause this method to return the wrong information.
  @returns float
  */
 + (float)screenWidth;
 
 /**
- Returns the screen height for the current orientation.
+ Returns the screen height for the current orientation. This method uses the [[UIApplication sharedApplication] statusBarOrientation] method to determine screen width. If you manually override that property, it will cause this method to return the wrong information.
  @returns float
  */
 + (float)screenHeight;

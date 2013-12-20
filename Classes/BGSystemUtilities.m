@@ -26,11 +26,11 @@
 
 #pragma mark - Screen Width/Height
 + (float)screenWidth {
-    return UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation]) ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width;
+    return UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width;
 }
 
 + (float)screenHeight {
-    return UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation]) ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height;
+    return UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height;
 }
 
 
