@@ -117,6 +117,11 @@
     XCTAssertEqual(count, 3, @"%s Failed.", __PRETTY_FUNCTION__);
 }
 
+- (void)testConcatenation {
+    NSString *concatenated = [NSString stringByConcatenating:@"Hello ",@"World!"];
+    XCTAssertEqualObjects(@"Hello World!", concatenated, @"%s Failed", __PRETTY_FUNCTION__);
+}
+
 
 #pragma mark - NSScanner Methods
 - (void)testScannerBetweenStrings {

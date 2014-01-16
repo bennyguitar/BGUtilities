@@ -119,7 +119,7 @@
 
 
 #pragma mark - Concatenate
-+ (instancetype)stringByConcatenating:(NSString *)aString, ... NS_REQUIRES_NIL_TERMINATION {
++ (instancetype)stringByConcatenating:(NSString *)aString, ... {
     // Set Up
     NSMutableString *newString = [NSMutableString string];
     va_list args;

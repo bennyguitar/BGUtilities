@@ -95,6 +95,6 @@
  @param @"Hello",@"World"
  @return NSString
  */
-+ (instancetype)stringByConcatenating:(NSString *)string, ... NS_REQUIRES_NIL_TERMINATION;
++ (instancetype)stringByConcatenating:(NSString *)string, ...;
 
 @end
