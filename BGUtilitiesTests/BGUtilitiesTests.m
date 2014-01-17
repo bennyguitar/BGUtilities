@@ -118,7 +118,7 @@
 }
 
 - (void)testConcatenation {
-    NSString *concatenated = [NSString stringByConcatenating:@"Hello ",@"World!"];
+    NSString *concatenated = [NSString stringByConcatenating:@"Hello ",@"World!", nil];
     XCTAssertEqualObjects(@"Hello World!", concatenated, @"%s Failed", __PRETTY_FUNCTION__);
 }
 
