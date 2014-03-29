@@ -58,8 +58,8 @@
     CGColorSpaceRelease(colorSpace);
     CGContextDrawImage(bitmapContext, CGRectMake(0, 0, CGBitmapContextGetWidth(bitmapContext),CGBitmapContextGetHeight(bitmapContext)), imageRef);
     UInt8 *data = CGBitmapContextGetData(bitmapContext);
-    int numComponents = 4;
-    int bytesInContext = CGBitmapContextGetHeight(bitmapContext) *
+    NSInteger numComponents = 4;
+    NSInteger bytesInContext = CGBitmapContextGetHeight(bitmapContext) *
     CGBitmapContextGetBytesPerRow(bitmapContext);
     
     //Get RGB values of fromColor
@@ -68,7 +68,7 @@
     
     //Now iterate through each pixel in the image..
     double redIn, greenIn, blueIn,alphaIn;
-    for (int i = 0; i < bytesInContext; i += numComponents) {
+    for (NSInteger i = 0; i < bytesInContext; i += numComponents) {
         //rgba value of current pixel..
         redIn = (double)data[i]/255.0;
         greenIn = (double)data[i+1]/255.0;
