@@ -89,5 +89,44 @@
 }
 
 
+#pragma mark - Image By Replacing Colors close to another Color
+- (instancetype)imageByReplacingColorsWithinDistance:(CGFloat)distance fromColor:(UIColor *)badColor withColor:(UIColor *)replaceColor {
+    CGImageRef imageRef = [self CGImage];
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, CGImageGetWidth(imageRef), CGImageGetHeight(imageRef), CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpace, CGImageGetBitmapInfo(imageRef));
+    CGColorSpaceRelease(colorSpace);
+    CGContextDrawImage(bitmapContext, CGRectMake(0, 0, CGBitmapContextGetWidth(bitmapContext),CGBitmapContextGetHeight(bitmapContext)), imageRef);
+    UInt8 *data = CGBitmapContextGetData(bitmapContext);
+    NSInteger numComponents = 4;
+    NSInteger bytesInContext = CGBitmapContextGetHeight(bitmapContext) *
+    CGBitmapContextGetBytesPerRow(bitmapContext);
+    
+    //Get RGB values of fromColor
+    NSArray *bRGBA = [replaceColor rgbaArray];
+    
+    //Now iterate through each pixel in the image..
+    double redIn, greenIn, blueIn, alphaIn;
+    for (NSInteger i = 0; i < bytesInContext; i += numComponents) {
+        //rgba value of current pixel..
+        redIn = (double)data[i]/255.0;
+        greenIn = (double)data[i+1]/255.0;
+        blueIn = (double)data[i+2]/255.0;
+        alphaIn = (double)data[i+3]/255.0;
+        UIColor *pixelColor = [UIColor colorWithRed:redIn green:greenIn blue:blueIn alpha:alphaIn];
+        if ([pixelColor distanceFromColor:badColor] <= distance) {
+            data[i] = [bRGBA[0] floatValue];
+            data[i+1] = [bRGBA[1] floatValue];
+            data[i+2] = [bRGBA[2] floatValue];
+            data[i+3] = [bRGBA[3] floatValue];
+        }
+    }
+    
+    CGImageRef outImage = CGBitmapContextCreateImage(bitmapContext);
+    UIImage *newImage = [UIImage imageWithCGImage:outImage];
+    CGImageRelease(outImage);
+    return newImage;
+}
+
+
 
 @end

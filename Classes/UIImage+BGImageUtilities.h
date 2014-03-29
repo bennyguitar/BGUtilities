@@ -46,4 +46,17 @@
  */
 - (instancetype)imageByReplacingColor:(UIColor *)badColor withColor:(UIColor *)replaceColor;
 
+
+#pragma mark - Image By Replacing Colors close to another Color
+/**
+ *  Creates a new UIImage from another UIImage by replacing all colors that are close to another color with a replacement color.
+ *
+ *  @param distance     CGFloat
+ *  @param badColor     UIColor
+ *  @param replaceColor UIColor
+ *
+ *  @return UIImage
+ */
+- (instancetype)imageByReplacingColorsWithinDistance:(CGFloat)distance fromColor:(UIColor *)badColor withColor:(UIColor *)replaceColor;
+
 @end
