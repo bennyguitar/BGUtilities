@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage    = 'http:/github.com/bennyguitar'
   s.license     = 'LICENSE'
   s.source_files = 'Classes/*.{h,m}'
-  s.platform = :ios
+  s.ios.deployment_target = '6.0'
   s.requires_arc = true
   s.dependency 'Colours'
 end
