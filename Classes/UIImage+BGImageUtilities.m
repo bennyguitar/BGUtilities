@@ -21,11 +21,9 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "UIImage+BGImageUtilities.h"
-#import <Colours.h>
-
+#import "Colours.h"
 
 @implementation UIImage (BGImageUtilities)
-
 
 #pragma mark - Image With New Color
 - (instancetype)imageWithNewColor:(UIColor *)replaceColor {
@@ -51,10 +49,9 @@
 
 #pragma mark - Image By Replacing Color
 - (instancetype)imageByReplacingColor:(UIColor *)badColor withColor:(UIColor *)replaceColor {
-    CGImageRef imageRef    = [self CGImage];
-    CGColorSpaceRef colorSpace  = CGColorSpaceCreateDeviceRGB();
-    CGContextRef bitmapContext  =
-    CGBitmapContextCreate(NULL,CGImageGetWidth(imageRef),CGImageGetHeight(imageRef), 8, CGImageGetWidth(imageRef)*4,colorSpace,kCGBitmapAlphaInfoMask);
+    CGImageRef imageRef = [self CGImage];
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, CGImageGetWidth(imageRef), CGImageGetHeight(imageRef), CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpace, CGImageGetBitmapInfo(imageRef));
     CGColorSpaceRelease(colorSpace);
     CGContextDrawImage(bitmapContext, CGRectMake(0, 0, CGBitmapContextGetWidth(bitmapContext),CGBitmapContextGetHeight(bitmapContext)), imageRef);
     UInt8 *data = CGBitmapContextGetData(bitmapContext);
