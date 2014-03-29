@@ -1,16 +1,18 @@
 Pod::Spec.new do |s|
   s.name         = 'BGUtilities'
-  s.version      = '1.1'
+  s.version      = '1.2'
   s.summary      = 'A collection of categories and class methods to make your iOS life easier.'
   s.author = {
     'Ben Gordon' => 'brgordon@ua.edu'
   }
   s.source = {
     :git => 'https://github.com/bennyguitar/BGUtilities.git',
-    :tag => '1.1'
+    :tag => '1.2'
   }
   s.homepage    = 'http:/github.com/bennyguitar'
   s.license     = 'LICENSE'
   s.source_files = 'Classes/*.{h,m}'
   s.platform = :ios
+  s.requires_arc = true
+  s.dependency 'Colours'
 end
