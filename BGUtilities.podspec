@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     :git => 'https://github.com/bennyguitar/BGUtilities.git',
     :tag => s.version
   }
-  s.homepage    = 'http:/github.com/bennyguitar'
+  s.homepage    = 'https://github.com/bennyguitar'
   s.license     = 'LICENSE'
   s.source_files = 'Classes/*.{h,m}'
   s.ios.deployment_target = '6.0'
