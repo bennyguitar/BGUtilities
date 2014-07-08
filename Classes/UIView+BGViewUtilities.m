@@ -144,6 +144,10 @@
 }
 
 - (void)addLinearGradientWithColors:(NSArray *)colors {
+    [self addLinearGradientWithColors:colors subLayerIndex:0];
+}
+
+- (void)addLinearGradientWithColors:(NSArray *)colors subLayerIndex:(int)index {
     CAGradientLayer *gradient = [CAGradientLayer layer];
     NSMutableArray *gColors = [NSMutableArray array];
     [colors enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -153,7 +157,8 @@
     }];
     gradient.colors = gColors;
     gradient.frame = self.bounds;
-    [self.layer insertSublayer:gradient atIndex:0];
+    int mIndex = self.layer.sublayers.count > index ? index : (int)self.layer.sublayers.count;
+    [self.layer insertSublayer:gradient atIndex:mIndex];
 }
 
 

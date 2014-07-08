@@ -175,5 +175,12 @@
  */
 - (void)addLinearGradientWithColors:(NSArray *)colors;
 
+/**
+ *  Creates a linear gradient from top to bottom, where the color at [colors firstObject] is at the top of the view, and the color at [colors lastObject] is at the bottom. Each color is split evenly across the gradient - there is no pivot point between colors. This method places the gradient at a specific sublayer.
+ *
+ *  @param colors NSArray of UIColors
+ */
+- (void)addLinearGradientWithColors:(NSArray *)colors subLayerIndex:(int)index;
+
 
 @end
