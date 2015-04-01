@@ -75,10 +75,10 @@
         //now you got current pixel rgb values...check it curresponds with your fromColor
         if(redIn == [aRGBA[0] floatValue] && greenIn == [aRGBA[1] floatValue] && blueIn == [aRGBA[2] floatValue]) {
             //image color matches fromColor, then change current pixel color to toColor
-            data[i] = [bRGBA[0] floatValue];
-            data[i+1] = [bRGBA[1] floatValue];
-            data[i+2] = [bRGBA[2] floatValue];
-            data[i+3] = [bRGBA[3] floatValue];
+            data[i] = [bRGBA[0] floatValue]*255.0f;
+            data[i+1] = [bRGBA[1] floatValue]*255.0f;
+            data[i+2] = [bRGBA[2] floatValue]*255.0f;
+            data[i+3] = [bRGBA[3] floatValue]*255.0f;
         }
     }
     
@@ -114,10 +114,10 @@
         alphaIn = (double)data[i+3]/255.0;
         UIColor *pixelColor = [UIColor colorWithRed:redIn green:greenIn blue:blueIn alpha:alphaIn];
         if ([pixelColor distanceFromColor:badColor] <= distance) {
-            data[i] = [bRGBA[0] floatValue];
-            data[i+1] = [bRGBA[1] floatValue];
-            data[i+2] = [bRGBA[2] floatValue];
-            data[i+3] = [bRGBA[3] floatValue];
+            data[i] = [bRGBA[0] floatValue]*255.0f;
+            data[i+1] = [bRGBA[1] floatValue]*255.0f;
+            data[i+2] = [bRGBA[2] floatValue]*255.0f;
+            data[i+3] = [bRGBA[3] floatValue]*255.0f;
         }
     }
     
