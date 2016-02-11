@@ -18,7 +18,7 @@ All of the important classes are located in the <code>Classes</code> top-level d
 
 The last class, <code>BGUtilities.h</code> is an aggregate of all of the classes above it, meaning you only have to <code>#import "BGUtilities.h"</code> in any classes you'd like to get all of the methods in this suite.
 
-**Cocoapods**
+**CocoaPods**
 
 <code>pod 'BGUtilities'</code>
 
